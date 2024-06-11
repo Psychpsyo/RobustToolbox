@@ -91,7 +91,7 @@ namespace Robust.Shared.Maths
             return (Direction)(Math.Floor((ang + Offset) / Segment) % 8);
         }
 
-        private const double CardinalSegment = 2 * Math.PI / 4.0; // Cut the circle into 4 pieces
+        private const double CardinalSegment = 2 * Math.PI / 8.0; // Cut the circle into 8 pieces
         private const double CardinalOffset = CardinalSegment / 2.0; // offset the pieces by 1/2 their size
 
         public readonly Direction GetCardinalDir()
@@ -101,7 +101,7 @@ namespace Robust.Shared.Maths
             if (ang < 0.0f) // convert -PI > PI to 0 > 2PI
                 ang += 2 * Math.PI;
 
-            return (Direction) (Math.Floor((ang + CardinalOffset) / CardinalSegment) * 2 % 8);
+            return (Direction) (Math.Floor((ang + CardinalOffset) / CardinalSegment) % 8);
         }
 
         /// <summary>
