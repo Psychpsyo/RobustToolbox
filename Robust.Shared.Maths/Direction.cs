@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Numerics;
 
 namespace Robust.Shared.Maths
@@ -240,7 +240,7 @@ namespace Robust.Shared.Maths
         /// <returns></returns>
         public static Angle ToAngle(this Direction dir)
         {
-            var ang = Segment * (int) dir;
+            var ang = Segment * (int) dir - Segment / 2;
 
             if (ang > Math.PI) // convert 0 > 2PI to -PI > +PI
                 ang -= 2 * Math.PI;
